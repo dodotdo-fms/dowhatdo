@@ -1,0 +1,20 @@
+<div class="BookMgtRentalDialog">
+    <h2 class="BookMgtRentalDialog__title">도서 대출하기</h2>
+
+    <form class="BookMgtRentalDialog__form">
+        <dl class="form-group">
+            <dt><label>대출 날짜</label></dt>
+            <dd><input ng-model="$ctrl.formData.rentalDate" readonly type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>대출자</label></dt>
+            <dd><input ng-model="$ctrl.formData.owner" type="text" class="form-control" /></dd>
+        </dl>
+    </form>
+
+    <div class="form-actions">
+        <button ng-click="$ctrl.rentalBook()" type="button" class="btn btn-primary">대출하기</button>
+        <button ng-click="$ctrl.close()" type="button" class="btn">취소</button>
+    </div>
+</div>

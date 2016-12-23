@@ -1,0 +1,26 @@
+<div class="BookMgtAddDialog">
+    <h2 class="BookMgtAddDialog__title">새로운 도서 등록하기</h2>
+
+    <form class="BookMgtAddDialog__form">
+        <dl class="form-group">
+            <dt><label>이름</label></dt>
+            <dd><input ng-model="$ctrl.formData.name" type="text" class="form-control" /></dd>
+            <dd class="error">이름을 입력해 주세요.</dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>ISBN</label></dt>
+            <dd><input ng-model="$ctrl.formData.isbn" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>저자</label></dt>
+            <dd><input ng-model="$ctrl.formData.author" type="text" class="form-control" /></dd>
+        </dl>
+    </form>
+
+    <div class="form-actions">
+        <button ng-click="$ctrl.submitNewBook()" type="button" class="btn btn-primary">등록하기</button>
+        <button ng-click="$ctrl.close()" type="button" class="btn">취소</button>
+    </div>
+</div>

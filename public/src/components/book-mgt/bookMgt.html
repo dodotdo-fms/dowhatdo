@@ -1,0 +1,13 @@
+<div class="BookMgt">
+    <div class="BookMgt__head">
+        <h1 class="BookMgt__title">도서 관리</h1>
+        <button ng-click="$ctrl.openAddBookDialog()" class="btn btn-primary" type="button">도서 추가하기</button>
+    </div>
+
+    <div class="BookMgt__board">
+        <dwd-book-mgt-card
+                ng-repeat="item in ($ctrl.bookItems | bookMgtSortFilter) track by item.id"
+                item="item"
+                class="BookMgt__item"></dwd-book-mgt-card>
+    </div>
+</div>

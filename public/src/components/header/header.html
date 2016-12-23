@@ -1,0 +1,12 @@
+<div class="Header">
+    <a class="Header__title">DoWhatDo</a>
+
+    <div class="Header__navigation">
+        <a ng-repeat="item in $ctrl.items track by item.id"
+           ng-class="{
+               'active': $ctrl.isActive(item)
+           }"
+           ng-bind="::item.name"
+           ng-href="{{ ::item.value }}"></a>
+    </div>
+</div>

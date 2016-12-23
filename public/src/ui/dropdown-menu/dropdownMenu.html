@@ -1,0 +1,12 @@
+<div ng-class="{
+        'DropdownMenu--is-opened': $ctrl.expanded,
+        'DropdownMenu--dir-leftBottom': $ctrl.dir === 'left-bottom',
+        'DropdownMenu--dir-rightBottom': $ctrl.dir === 'right-bottom'
+    }" class="DropdownMenu">
+    <div ng-transclude="toggler"
+         ng-click="$ctrl.toggle()"
+         class="DropdownMenu__toggler"></div>
+    <div ng-transclude="content"
+         ng-show="$ctrl.expanded"
+         class="DropdownMenu__content"></div>
+</div>

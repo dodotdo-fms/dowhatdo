@@ -1,0 +1,42 @@
+<div class="HardwareMgtAddDialog">
+    <h2 class="HardwareMgtAddDialog__title">새로운 기기 추가하기</h2>
+
+    <form class="HardwareMgtAddDialog__form">
+        <dl class="form-group">
+            <dt><label>이름</label></dt>
+            <dd><input ng-model="$ctrl.formData.name" type="text" class="form-control" /></dd>
+            <dd class="error">이름을 입력해 주세요.</dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>종류</label></dt>
+            <dd>
+                <select ng-model="$ctrl.formData.type" class="form-select">
+                    <option ng-repeat="type in $ctrl.hardwareTypes"
+                            value="{{ ::type }}"
+                            ng-bind="::$ctrl.getHardwareTypeAlias(type)"></option>
+                </select>
+            </dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>모델명</label></dt>
+            <dd><input ng-model="$ctrl.formData.modelName" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>Mac-Address</label></dt>
+            <dd><input ng-model="$ctrl.formData.macAddress" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>제조사</label></dt>
+            <dd><input ng-model="$ctrl.formData.manufacturer" type="text" class="form-control" /></dd>
+        </dl>
+    </form>
+
+    <div class="form-actions">
+        <button ng-click="$ctrl.submitNewHardware()" type="button" class="btn btn-primary">추가하기</button>
+        <button ng-click="$ctrl.close()" type="button" class="btn">취소</button>
+    </div>
+</div>

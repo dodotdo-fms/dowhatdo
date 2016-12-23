@@ -1,0 +1,18 @@
+<div class="HardwareMgt">
+    <div class="HardwareMgt__head">
+        <h1 class="HardwareMgt__title">하드웨어 관리</h1>
+        <button ng-click="$ctrl.openAddNewHardwareDialog()" class="btn btn-primary" type="button">기기 추가하기</button>
+    </div>
+
+    <div class="HardwareMgt__filter">
+        <dwd-hardware-mgt-filter on-filter-change="$ctrl.updateFilter(types)"></dwd-hardware-mgt-filter>
+    </div>
+
+    <div class="HardwareMgt__board">
+        <dwd-hardware-mgt-card
+                ng-repeat="item in ($ctrl.hardwareItems | hardwareMgtMenuFilter:$ctrl.typeFilter | hardwareMgtSortFilter) track by item.id"
+                item="item"
+                class="HardwareMgt__item">
+        </dwd-hardware-mgt-card>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="HardwareMgtOwnDialog">
+    <h2 class="HardwareMgtOwnDialog__title">소재자 변경</h2>
+
+    <form class="HardwareMgtOwnDialog__form">
+        <dl class="form-group">
+            <dt><label>소재자</label></dt>
+            <dd><input ng-model="$ctrl.formData.owner" type="text" class="form-control" /></dd>
+        </dl>
+    </form>
+
+    <div class="form-actions">
+        <button ng-click="$ctrl.changeOwner()" type="button" class="btn btn-primary">변경하기</button>
+        <button ng-click="$ctrl.close()" type="button" class="btn">취소</button>
+    </div>
+</div>

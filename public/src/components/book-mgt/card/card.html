@@ -1,0 +1,47 @@
+<div class="BookMgtCard">
+    <div class="BookMgtCard__head">
+        <h3 ng-bind="$ctrl.item.name"></h3>
+        <span ng-bind="$ctrl.item.isRental ? '대출 중' : '대출 가능'"
+              ng-class="{
+                  'state-open': !$ctrl.item.isRental,
+                  'state-closed': $ctrl.item.isRental
+              }"
+              class="state"></span>
+        <dwd-dropdown-menu dir="right-bottom">
+            <dwd-dropdown-menu-toggler>
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </dwd-dropdown-menu-toggler>
+            <dwd-dropdown-menu-content>
+                <div ng-if="!$ctrl.item.isRental"
+                     ng-click="$ctrl.rentalBook()"
+                     class="BookMgtCard__action menu-item">대출하기</div>
+
+                <div ng-if="$ctrl.item.isRental"
+                     ng-click="$ctrl.returnBook()"
+                     class="BookMgtCard__action menu-item">반납하기</div>
+            </dwd-dropdown-menu-content>
+        </dwd-dropdown-menu>
+    </div>
+
+    <div class="BookMgtCard__body">
+        <div>
+            <label>ISBN</label>
+            <span ng-bind="$ctrl.item.isbn"></span>
+        </div>
+
+        <div>
+            <label>저자</label>
+            <span ng-bind="::$ctrl.author"></span>
+        </div>
+
+        <div>
+            <label>대출 날짜</label>
+            <span ng-bind="$ctrl.item.rentalDate | date:'MM-dd, yyyy'"></span>
+        </div>
+
+        <div>
+            <label>소재자</label>
+            <span ng-bind="$ctrl.item.owner"></span>
+        </div>
+    </div>
+</div>

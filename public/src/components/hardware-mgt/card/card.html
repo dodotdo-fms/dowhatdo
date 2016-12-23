@@ -1,0 +1,42 @@
+<div class="HardwareMgtCard">
+    <div class="HardwareMgtCard__head">
+        <i ng-class="::$ctrl.getIcon()" aria-hidden="true"></i>
+        <h3 ng-bind="$ctrl.item.name"></h3>
+        <dwd-dropdown-menu dir="right-bottom">
+            <dwd-dropdown-menu-toggler>
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </dwd-dropdown-menu-toggler>
+            <dwd-dropdown-menu-content>
+                <div class="HardwareMgtCard__action menu-item">내용 편집하기</div>
+                <div ng-click="$ctrl.openChangeOwnerDialog()" class="HardwareMgtCard__action menu-item">소재자 변경하기</div>
+            </dwd-dropdown-menu-content>
+        </dwd-dropdown-menu>
+    </div>
+
+    <div class="HardwareMgtCard__body">
+        <div>
+            <label>모델명</label>
+            <span ng-bind="$ctrl.item.modelName"></span>
+        </div>
+
+        <div>
+            <label>종류</label>
+            <span ng-bind="::$ctrl.getTypeString()"></span>
+        </div>
+
+        <div>
+            <label>Mac-Address</label>
+            <span ng-bind="$ctrl.item.macAddress"></span>
+        </div>
+
+        <div>
+            <label>제조사</label>
+            <span ng-bind="$ctrl.item.manufacturer"></span>
+        </div>
+
+        <div>
+            <label>소재자</label>
+            <span ng-bind="$ctrl.item.owner"></span>
+        </div>
+    </div>
+</div>

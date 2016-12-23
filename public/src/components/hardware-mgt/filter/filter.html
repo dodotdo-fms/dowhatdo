@@ -1,0 +1,7 @@
+<div class="HardwareMgtFilter">
+    <label ng-repeat="item in $ctrl.menu track by item.id">
+        <input ng-change="$ctrl.onToggleCheckbox()" ng-model="item.checked" type="checkbox" />
+        <i ng-if="!!item.icon" ng-class="::item.icon" aria-hidden="true"></i>
+        <span ng-bind="::item.name"></span>
+    </label>
+</div>
