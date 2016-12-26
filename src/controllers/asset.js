@@ -49,6 +49,16 @@ router.put('/hardware/:id', async (req, res) => {
     pushService.emitHardwareChanged(hardware.toJSON());
 });
 
+router.delete('/hardware/:id', async (req, res) => {
+    const hardwareId = req.params.id;
+    const hardware = await HardwareModel.findById(hardwareId);
+
+    await hardware.destroy();
+
+    res.json({ message: 'success' });
+    pushService.emitHardwareDeleted(hardwareId);
+});
+
 router.post('/hardware/:id/own', async (req, res) => {
     const hardwareId = req.params.id;
     const owner = req.body.owner;

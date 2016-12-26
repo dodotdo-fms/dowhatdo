@@ -22,6 +22,9 @@ class AssetMgtCtrl {
             })
             .listen('hardwareChanged', (changeHardware) => {
                 this.$scope.$broadcast(event.assetMgt.SOCKET_HARDWARE_CHANGED, changeHardware);
+            })
+            .listen('hardwareDeleted', (deletedHardware) => {
+                this.$scope.$broadcast(event.assetMgt.SOCKET_HARDWARE_DELETED, deletedHardware);
             });
 
         this.bookSocket

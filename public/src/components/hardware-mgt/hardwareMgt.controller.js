@@ -1,4 +1,6 @@
 import findIndex from 'lodash.findindex';
+import remove from 'lodash.remove';
+import toNumber from 'lodash.tonumber';
 import event from '../../constants/event';
 
 class HardwareMgtCtrl {
@@ -30,6 +32,12 @@ class HardwareMgtCtrl {
                 this.hardwareItems[index] = changedHardware;
             }
 
+            this.$scope.$apply();
+        });
+
+        this.$scope.$on(event.assetMgt.SOCKET_HARDWARE_DELETED, (e, deletedHardware) => {
+            const hardwareId = deletedHardware.id;
+            remove(this.hardwareItems, item => toNumber(item.id) === toNumber(hardwareId));
             this.$scope.$apply();
         });
     }
