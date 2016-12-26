@@ -7,7 +7,7 @@ class FilterService {
     }
 
     getFilterMenu() {
-        return this.$http.get('/api/asset/hardware/type').then((result) => {
+        return this.$http.get('/api/asset/hardwareType').then((result) => {
             const hardwareTypes = result.data;
 
             return hardwareTypes.map((type, idx) => ({

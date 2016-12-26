@@ -81,7 +81,7 @@ router.delete('/hardware/:id/own', async (req, res) => {
     pushService.emitHardwareChanged(hardware.toJSON());
 });
 
-router.get('/hardware/type', (req, res) => {
+router.get('/hardwareType', (req, res) => {
     res.json(values(hardwareType));
 });
 
