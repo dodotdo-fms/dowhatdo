@@ -1,0 +1,30 @@
+<div class="HardwareMgtEditDialog">
+    <h2 class="HardwareMgtEditDialog__title">기기 편집</h2>
+
+    <form class="HardwareMgtEditDialog__form">
+        <dl class="form-group">
+            <dt><label>이름</label></dt>
+            <dd><input ng-model="$ctrl.formData.name" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>모델명</label></dt>
+            <dd><input ng-model="$ctrl.formData.modelName" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>Mac-Address</label></dt>
+            <dd><input ng-model="$ctrl.formData.macAddress" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>제조사</label></dt>
+            <dd><input ng-model="$ctrl.formData.manufacturer" type="text" class="form-control" /></dd>
+        </dl>
+    </form>
+
+    <div class="form-actions">
+        <button ng-click="$ctrl.changeHardwareInfo()" type="button" class="btn btn-primary">변경하기</button>
+        <button ng-click="$ctrl.close()" type="button" class="btn">취소</button>
+    </div>
+</div>

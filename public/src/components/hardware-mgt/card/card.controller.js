@@ -2,7 +2,8 @@ import icon from '../../../constants/icon';
 import string from '../../../constants/string';
 
 class CardCtrl {
-    constructor(HardwareMgtOwnDialog) {
+    constructor(HardwareMgtEditDialog, HardwareMgtOwnDialog) {
+        this.editInfoDialog = new HardwareMgtEditDialog();
         this.changeOwnerDialog = new HardwareMgtOwnDialog();
     }
 
@@ -14,11 +15,15 @@ class CardCtrl {
         return string.hardwareTypes[this.item.type];
     }
 
+    openEditHardwareDialog() {
+        this.editInfoDialog.setHardwareId(this.item.id).open();
+    }
+
     openChangeOwnerDialog() {
         this.changeOwnerDialog.setHardwareId(this.item.id).open();
     }
 }
 
-CardCtrl.$inject = ['HardwareMgtOwnDialog'];
+CardCtrl.$inject = ['HardwareMgtEditDialog', 'HardwareMgtOwnDialog'];
 
 export default CardCtrl;
