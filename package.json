@@ -1,6 +1,6 @@
 {
   "name": "dowhatdo",
-  "version": "1.0.0",
+  "version": "1.0.0b",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -43,12 +43,15 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
-    "angular": "^1.6.0",
-    "angular-ui-router": "^0.3.2",
+    "angular": "^1.5.8",
+    "angular-ui-router": "0.3.2",
     "babel-polyfill": "^6.20.0",
     "body-parser": "^1.15.2",
+    "connect-redis": "^3.2.0",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "lodash.clonedeep": "^4.5.0",
     "lodash.filter": "^4.6.0",
     "lodash.find": "^4.6.0",
@@ -60,6 +63,8 @@
     "lodash.tonumber": "^4.0.3",
     "lodash.values": "^4.3.0",
     "ng-dialog": "^0.6.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^6.1.2",
     "pg-hstore": "^2.3.2",
     "primer-css": "^4.4.0",

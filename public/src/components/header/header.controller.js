@@ -1,5 +1,7 @@
 class HeaderCtrl {
-    constructor($location) {
+    constructor($http, $state, $location) {
+        this.$http = $http;
+        this.$state = $state;
         this.$location = $location;
     }
 
@@ -12,8 +14,17 @@ class HeaderCtrl {
     isActive(item) {
         return this.$location.absUrl().includes(item.value);
     }
+
+    logout() {
+        this.$http.delete('/api/auth')
+            .then(() => this.$state.go('login'));
+    }
 }
 
-HeaderCtrl.$inject = ['$location'];
+HeaderCtrl.$inject = [
+    '$http',
+    '$state',
+    '$location'
+];
 
 export default HeaderCtrl;

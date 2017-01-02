@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="home" lang="ko">
+<html ng-app="app" lang="ko">
 <head>
+    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
 
     <title>DoWhatDo</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/icons/font-awesome/css/font-awesome.min.css" />
 </head>
-<body>
+<body ng-controller="GlobalCtrl as global">
+    <app></app>
+
+    <script type="text/javascript" src="/static/libs/jquery-3.1.1.min.js"></script>
 </body>
 </html>

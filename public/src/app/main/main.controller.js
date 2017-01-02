@@ -1,6 +1,6 @@
-import event from '../constants/event';
+import event from '../../constants/event';
 
-class AssetMgtCtrl {
+class MainCtrl {
     constructor($scope, $state, Socket) {
         this.$scope = $scope;
         this.$state = $state;
@@ -10,11 +10,6 @@ class AssetMgtCtrl {
     }
 
     $onInit() {
-        this.menu = [
-            { id: 0, name: '하드웨어', value: 'assetMgt.hardware' },
-            { id: 1, name: '도서', value: 'assetMgt.book' }
-        ];
-
         this.hardwareSocket
             .connect()
             .listen('newHardware', (newHardware) => {
@@ -41,12 +36,8 @@ class AssetMgtCtrl {
         this.hardwareSocket.disconnect();
         this.bookSocket.disconnect();
     }
-
-    isMenuSelected(item) {
-        return this.$state.is(item.value);
-    }
 }
 
-AssetMgtCtrl.$inject = ['$scope', '$state', 'Socket'];
+MainCtrl.$inject = ['$scope', '$state', 'Socket'];
 
-export default AssetMgtCtrl;
+export default MainCtrl;

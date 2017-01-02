@@ -1,5 +1,9 @@
 const error = {
-    TYPE_NOT_VALID: 0
+    TYPE_NOT_VALID: 0,
+    INVALID_USERID_OR_PASSWORD: 1,
+    INVALID_ACCESS_TOKEN: 2,
+    NOT_ACCEPTABLE_USERID: 3,
+    NOT_ACCEPTABLE_PASSWORD: 4
 };
 
 export default error;

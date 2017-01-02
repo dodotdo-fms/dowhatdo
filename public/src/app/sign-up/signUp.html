@@ -1,0 +1,27 @@
+<div class="SignUp">
+    <div ng-show="$ctrl.showErrorFlash" ng-bind="$ctrl.errorMessage" class="flash flash-error"></div>
+
+    <form class="SignUp__form">
+        <dl class="form-group">
+            <dt><label>이름</label></dt>
+            <dd><input ng-model="$ctrl.formData.name" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>ID</label></dt>
+            <dd><input ng-model="$ctrl.formData.userid" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>비밀번호</label></dt>
+            <dd><input ng-model="$ctrl.formData.password" type="text" class="form-control" /></dd>
+        </dl>
+
+        <dl class="form-group">
+            <dt><label>인증번호</label></dt>
+            <dd><input ng-model="$ctrl.formData.accessToken" type="text" class="form-control" /></dd>
+        </dl>
+
+        <button ng-click="$ctrl.signUp()" type="button" class="btn btn-primary">로그인</button>
+    </form>
+</div>

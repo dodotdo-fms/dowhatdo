@@ -9,4 +9,8 @@
            ng-bind="::item.name"
            ng-href="{{ ::item.value }}"></a>
     </div>
+
+    <div class="Header__menu">
+        <a ng-click="$ctrl.logout()" class="Header__logoutButton">로그아웃</a>
+    </div>
 </div>
