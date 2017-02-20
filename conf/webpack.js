@@ -28,8 +28,7 @@ module.exports = (() => {
             'ng-dialog/css/ngDialog-theme-default.css',
             'primer-css/build/build.css'
         ],
-        home: resolvePath('../public/src/app/home.js'),
-        assetMgt: resolvePath('../public/src/app/assetMgt.js')
+        app: resolvePath('../public/src/app/index.js')
     };
 
     config.output = env.isTest() ? {} : {
@@ -61,9 +60,7 @@ module.exports = (() => {
         ]
     };
 
-    config.postcss = () => {
-        return [autoprefixer({ browsers: ['> 1%', 'last 3 version'] })];
-    };
+    config.postcss = () => [autoprefixer({ browsers: ['> 1%', 'last 3 version'] })];
 
     config.plugins = [];
 
@@ -74,19 +71,13 @@ module.exports = (() => {
                 name: ['framework'],
                 filename: '[name].js',
                 minChunks: Infinity,
-                chunks: ['home', 'assetMgt']
+                chunks: ['app']
             }),
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 template: path.resolve(__dirname, '../public/views/index.html'),
                 inject: 'body',
-                chunks: ['framework', 'home']
-            }),
-            new HtmlWebpackPlugin({
-                filename: 'assetMgt.html',
-                template: path.resolve(__dirname, '../public/views/assetMgt.html'),
-                inject: 'body',
-                chunks: ['framework', 'assetMgt']
+                chunks: ['framework', 'app']
             }),
             extractLibrary,
             extractStylesheet

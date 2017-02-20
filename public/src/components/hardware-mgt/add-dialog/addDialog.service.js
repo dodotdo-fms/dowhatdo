@@ -4,7 +4,7 @@ class AddDialogService {
     }
 
     getHardwareTypes() {
-        return this.$http.get('/api/asset/hardware/type').then(result => result.data);
+        return this.$http.get('/api/asset/hardwareType').then(result => result.data);
     }
 
     postNewHardware(hardwareInfo) {

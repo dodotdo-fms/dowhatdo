@@ -19,6 +19,10 @@ const pushService = {
         emit('hardware', 'hardwareChanged', changedHardware);
     },
 
+    emitHardwareDeleted(hardwareId) {
+        emit('hardware', 'hardwareDeleted', { id: hardwareId });
+    },
+
     emitNewBook(newBook) {
         emit('book', 'newBook', newBook);
     },

@@ -16,6 +16,7 @@
         "indent": [2, 4, { "SwitchCase": 1 }],
         "no-unused-vars": 1,
         "no-trailing-spaces": [2, { "skipBlankLines": true }],
+        "no-param-reassign": 0,
         "comma-dangle": 0
     }
 }

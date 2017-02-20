@@ -22,6 +22,43 @@ router.post('/hardware', async (req, res) => {
     pushService.emitNewHardware(newHardware.toJSON());
 });
 
+router.get('/hardware/:id', async (req, res) => {
+    const hardwareId = req.params.id;
+    const hardware = await HardwareModel.findById(hardwareId);
+
+    res.json(hardware.toJSON());
+});
+
+router.put('/hardware/:id', async (req, res) => {
+    const hardwareId = req.params.id;
+    const {
+        name,
+        modelName,
+        macAddress,
+        manufacturer,
+        tag = ''
+    } = req.body;
+
+    const hardware = await HardwareModel.findById(hardwareId);
+
+    await hardware.update({
+        name, modelName, macAddress, manufacturer, tag
+    });
+
+    res.json(hardware.toJSON());
+    pushService.emitHardwareChanged(hardware.toJSON());
+});
+
+router.delete('/hardware/:id', async (req, res) => {
+    const hardwareId = req.params.id;
+    const hardware = await HardwareModel.findById(hardwareId);
+
+    await hardware.destroy();
+
+    res.json({ message: 'success' });
+    pushService.emitHardwareDeleted(hardwareId);
+});
+
 router.post('/hardware/:id/own', async (req, res) => {
     const hardwareId = req.params.id;
     const owner = req.body.owner;
@@ -44,7 +81,7 @@ router.delete('/hardware/:id/own', async (req, res) => {
     pushService.emitHardwareChanged(hardware.toJSON());
 });
 
-router.get('/hardware/type', (req, res) => {
+router.get('/hardwareType', (req, res) => {
     res.json(values(hardwareType));
 });
 
