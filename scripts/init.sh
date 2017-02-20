@@ -7,6 +7,10 @@ sudo apt-get update
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs nginx
 
+# Install postgresql
+sudo apt-get install postgresql
+service postgresql restart
+
 # Set nginx config
 sudo cp conf/dowhatdo.nginx /etc/nginx/sites-available/dowhatdo.conf
 sudo ln -s /etc/nginx/sites-available/dowhatdo.conf /etc/nginx/sites-enabled/dowhatdo.conf
