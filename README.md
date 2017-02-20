@@ -32,6 +32,8 @@ $ sudo ./scripts/run.sh
 
 Access token is for create new user.
 
+Make sure config your database.
+
 ```json
 {
     "port": 9070,
