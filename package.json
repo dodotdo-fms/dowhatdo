@@ -1,6 +1,6 @@
 {
   "name": "dowhatdo",
-  "version": "1.0.0b",
+  "version": "1.0.0rc",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
