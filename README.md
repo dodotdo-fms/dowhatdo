@@ -30,6 +30,8 @@ $ sudo ./scripts/run.sh
 
 ## App config sample
 
+Access token is for create new user.
+
 ```json
 {
     "port": 9070,
@@ -39,7 +41,9 @@ $ sudo ./scripts/run.sh
         "name": "dowhatdo",
         "user": "your_username",
         "password": "yout_password"
-    }
+    },
+    "sessionSecret": "SECRET_VALUE",
+    "accessToken": "SECRET_VALUE"
 }
 ```
 
